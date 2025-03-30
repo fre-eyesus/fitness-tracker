@@ -1,9 +1,16 @@
 import './App.css'
+import Dashboard from "./components/dashboard.jsx";
+import Activity from './components/Activity.jsx';
+import Progress from './components/Progress.jsx';
 function App() {
 
   return (
     <>
-  <Dashboard />
+    <div >
+      <Dashboard />
+      <Progress />
+    </div>
+   
     </>
   )
 }
