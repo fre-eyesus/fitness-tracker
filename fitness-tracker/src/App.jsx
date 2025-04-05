@@ -5,22 +5,26 @@ import Activity from './components/Activity.jsx';
 import Trainer from './components/TrainerProfile.jsx';
 import DietMenu from './components/DIetMenu.jsx';
 import Footer from './components/Footer.jsx';
+import Sidebar from './cards/sidebar.jsx';
+import Workout from './cards/Workout.jsx';
+import LeftSidebar from './cards/LeftSidebar.jsx';
+import CalorieChart from './components/CalorieChart.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CalorieInput from './components/CalorieInput.jsx';
+
+
 function App() {
 
   return (
-    <>
-    <div >
-      <Dashboard />
-      <div className='md:flex md:flex-row md:ml-22'>
-        <Activity />
-        <Progress />
-      </div>
-         <Trainer />
-        <DietMenu />
-      
-    </div>
-    <Footer />
-    </>
+   <>
+<Router>
+  <Routes>
+    <Route path="/" element={<Dashboard />} />
+    <Route path="/calories" element={<CalorieInput />} />
+  </Routes>
+</Router>
+
+  </>
   )
 }
 
