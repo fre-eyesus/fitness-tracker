@@ -1,22 +1,15 @@
-import React from 'react';
+import React from "react";
+import Dropdown from "./DropDown";
 
 const Activity = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
-      <div className="w-64 h-40 bg-gray-200 rounded-lg shadow-md p-4">
-        <div className="h-full flex flex-col justify-between">
-          <div className="text-sm font-medium text-gray-700">
-            Activity
+    <div class="flex justify-center mt-4 mb-4 w-[300px] h-[191px] mx-6 md:w-[29.66%] md:h-[30%] md:ml-[6.4%] ">
+      <div className="w-[300px] h-[191px] pt-3 px-4 bg-gray-100 border border-gray-200 rounded-lg shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <p className="font-bold tracking-tight text-gray-900">Activity</p>
+            <Dropdown />
           </div>
-          <div className="text-xs text-gray-500">
-            This is a credit card sized component
-          </div>
-          <div className="flex justify-end items-center">
-            <span className="text-xs bg-gray-300 px-2 py-1 rounded">
-              Details
-            </span>
-          </div>
-        </div>
+
       </div>
     </div>
   );
