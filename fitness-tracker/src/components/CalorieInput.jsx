@@ -150,13 +150,13 @@ const CalorieInput = () => {
           type="submit"
           className="bg-[#8676FE] text-white py-2 rounded-md hover:bg-[#6c60e6] transition cursor-pointer"
         >
-          Calculate Calories Burned
+          Calculate 
         </button>
       </form>
 
       {loading && <p className="mt-4 text-sm text-gray-600">Fetching data...</p>}
 
-    
+
     </div>
   );
 };
