@@ -1,10 +1,11 @@
 import React from 'react'
-
+import salad from '../assets/salad.png'
+import blueberry from '../assets/blueberry.svg'
 function DietMenu() {
   return (
     <>
     <p className='text-sm mx-4 my-4 font-medium md:text-center'>Featured Diet Menu</p>
-    <div className="mx-4 block w-[300px] h-[225px] p-3 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm md:mx-auto md:w-[50%] md:mb-2 md:p-2">
+    <div className="mx-4 block w-[300px] h-[225px] p-3 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm md:mx-auto md:w-[50%] md:mb-2 md:p-2 lg:w-[75%]">
         <div className='flex justify-between bg-gray-900 rounded-lg p-3'>
             <p className='text-white font-medium'>Breakfast</p>
             <span className='text-white font-medium'>10:00 am</span>
@@ -13,7 +14,7 @@ function DietMenu() {
         <div className='md:flex md:flex-row md:gap-4 md:mt-5 md:max-xl:flex-col md:max-xl:mt-1 xl:gap-2 md:max-xl:ml-10 xl:ml-8'>
             <div className='flex row gap-4 mt-3'>
                 <div>
-                    <img src="../assets/salad.png" alt=" "/>
+                    <img src={salad} alt=" "  className="w-full h-full object-cover max-md:hidden"/>
                 </div>
                 <div>
                     <h3 className='text-sm font-medium'>Avocado Salad</h3>
@@ -32,7 +33,7 @@ function DietMenu() {
     
             <div className='flex row gap-4 mt-3 md:max-xl:mt-1'>
                 <div>
-                    <img src="../assets/blueberry.svg" alt=" "/>
+                    <img src={blueberry} alt=" " className='w-full h-full object-cover max-md:hidden'/>
                 </div>
                 <div>
                     <h3 className='text-sm font-medium'>Blue Berry</h3>
