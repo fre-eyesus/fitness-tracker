@@ -3,10 +3,9 @@ import Menu from '../components/Menu';
 const Workout = () => {
   return (
     <>
-        <Menu />
-      <h2 className="text-xl font-medium mx-6 my-2 md:ml-36">Welcome!</h2>
-
-      <div className="w-[300px] md:w-[61.2%] h-[191px] md:h-[1.94%] mx-6 md:mx-36 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
+      <h2 className="text-xl font-medium mx-6 my-2 md:ml-36">Welcome!, <span className='font-light text-base text-gray-400'>User</span></h2>
+  
+      <div className="w-[300px] md:w-[61.2%] h-[191px] mx-6 md:mx-36 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
         <p className="mb-2 font-bold tracking-tight text-gray-900">Your workout</p>
         <p className="font-normal text-gray-700">Results for today's workout</p>
 
@@ -31,7 +30,7 @@ const Workout = () => {
             <span className="ml-4">2,500 steps</span>
           </div>
         </div>
-      </div>
+  </div>
     </>
   );
 };
