@@ -7,13 +7,15 @@ const CalorieChart = ({ chartData = [] }) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
+  const testData = [
+    { activity: 'Running', duration: 30, calories: 350 },
+    { activity: 'Walking', duration: 60, calories: 180 },
+  ];
+  
 
   useEffect(() => {
 
-
-    console.log("Chart Data:", chartData);
-
-    const ctx = chartRef.current.getContext('2d');
+     const ctx = chartRef.current.getContext('2d');
 
     if (chartInstance.current) {
         chartInstance.current.destroy(); 
@@ -35,7 +37,10 @@ const CalorieChart = ({ chartData = [] }) => {
                 '#4BC0C033',
                 '#36A2EB33',
                 '#9966FF33',
-                '#C9CBCF33']
+                '#C9CBCF33'],
+                barThickness: 30,
+
+
           }
         ]
       },
@@ -58,9 +63,11 @@ const CalorieChart = ({ chartData = [] }) => {
                   display: true,
                   text: 'Calories Burned'
                 },
-                beginAtZero: true,
+                beginAtZero: false,
+                min:0,
+                max:400,
                 ticks: {
-                    callback: (value) => Math.round(value)
+                    callback: (value) => Math.round(value),
                   }
             }
         }
@@ -73,11 +80,11 @@ const CalorieChart = ({ chartData = [] }) => {
   }, [chartData]);
 
   return (
-    <div className="w-[300px] md:w-[66%] h-[191px]  mx-6 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
+    <div className="w-[300px] lg:w-full md:mas-lg:ml-28 md:w-[66%] min-h-[250px] mx-9 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
     
-        <canvas ref={chartRef} className="w-full h-64"></canvas>
+        <canvas ref={chartRef} className='w-full h-[250px]' ></canvas>
 
-    </div>
+    </div>  
   );
 };
 
