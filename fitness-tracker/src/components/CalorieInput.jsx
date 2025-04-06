@@ -1,81 +1,7 @@
-// import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { Chart } from 'chart.js/auto';
+import CalorieChart from './CalorieChart';
 
-// const CalorieInput = () => {
-//   const [calories, setCalories] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert(`You consumed ${calories} calories`);
-//     setCalories("");
-//   };
-
-//   return (
-//     <div className="w-[300px] md:w-[60%] mx-auto mt-10 p-6 bg-[#EEEEEE] rounded-lg shadow-md border border-gray-300">
-//       <h2 className="text-xl font-bold mb-4 text-[#983535]">Calorie Tracker</h2>
-//       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-//         <label className="text-sm font-medium text-gray-700">
-//           Enter Calories Consumed:
-//         </label>
-//         <input
-//           type="number"
-//           value={calories}
-//           onChange={(e) => setCalories(e.target.value)}
-//           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8676FE]"
-//           placeholder="e.g. 500"
-//         />
-//         <button
-//           type="submit"
-//           className="bg-[#8676FE] text-white py-2 rounded-md hover:bg-[#6c60e6] transition"
-//         >
-//           Submit
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default CalorieInput;
-
-// import React, { useState } from 'react';
-
-// const CalorieInput = () => {
-//   const [calories, setCalories] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert(`You consumed ${calories} calories`);
-//     setCalories("");
-//   };
-
-//   return (
-//     <div>
-//       <h2 className="text-xl font-bold mb-4 text-[#983535]">Calorie Tracker</h2>
-//       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-//         <label className="text-sm font-medium text-gray-700">
-//           Enter Calories Consumed:
-//         </label>
-//         <input
-//           type="number"
-//           value={calories}
-//           onChange={(e) => setCalories(e.target.value)}
-//           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8676FE]"
-//           placeholder="e.g. 500"
-//         />
-//         <button
-//           type="submit"
-//           className="bg-[#8676FE] text-white py-2 rounded-md hover:bg-[#6c60e6] transition"
-//         >
-//           Submit
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default CalorieInput;
-
-import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 
 const CalorieInput = () => {
   const [activity, setActivity] = useState('');
@@ -83,6 +9,13 @@ const CalorieInput = () => {
   const [duration, setDuration] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [chartData, setChartData] = useState([]);
+
+  const clearChart = () => {
+    setChartData([]);
+  };
+  
+
 
   const fetchCalories = async () => {
     try {
@@ -96,23 +29,49 @@ const CalorieInput = () => {
       });
 
       const data = await response.json();
-      setResult(data);
 
-      console.log('Fetched data:', data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setResult([]);
-    } finally {
-      setLoading(false);
-    }
+          if (Array.isArray(data) && data.length > 0) {
+            const max = data.reduce((a, b) => a.total_calories > b.total_calories ? a : b);
+            const processed = {
+              activity: max.name,
+              duration: max.duration_minutes,
+              calories: max.total_calories
+            }
+            
+              
+          console.log(' Processed chartData:', processed);
+          setChartData(prev => [...prev, processed]);
+          } else {
+            alert('No data found for this activity. Please try a different activity name.');
+            setChartData([]);
+          }
+      
+          console.log('Fetched data:', data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setChartData([]);
+        } finally {
+          setLoading(false);
+        }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (activity.trim()) {
-      fetchCalories();
-    }
-  };
+        const handleSubmit = (e) => {
+          e.preventDefault();
+
+          if (!activity.trim()) {
+            alert('Please enter an activity');
+            return;
+          }
+          if (!weight || isNaN(weight) || weight <= 0 || weight > 500 || weight < 50) {
+            alert('Please enter a valid weight');
+            return;
+          }
+          if (!duration || isNaN(duration) || duration <= 0 ) {
+            alert('Please enter a valid duration');
+            return;
+          }
+        fetchCalories();
+        };
 
   return (
     
@@ -152,11 +111,15 @@ const CalorieInput = () => {
         >
           Calculate 
         </button>
+        <button
+          type="button"
+          onClick={clearChart}
+          className="bg-red-500 text-white py-2 rounded-md hover:bg-red-400 transition cursor-pointer">Clear</button>
       </form>
 
       {loading && <p className="mt-4 text-sm text-gray-600">Fetching data...</p>}
 
-
+      <CalorieChart chartData={chartData} />
     </div>
   );
 };
