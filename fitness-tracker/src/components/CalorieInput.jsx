@@ -128,7 +128,7 @@ const CalorieInput = () => {
         <button
           type="button"
           onClick={clearChart}
-          className="bg-red-500 text-white py-2 rounded-md hover:bg-red-400 transition cursor-pointer">Clear</button>
+          className="bg-red-500 text-white py-2 rounded-md hover:bg-red-400 transition cursor-pointer">Clear Data</button>
       </form>
 
       {loading && <p className="mt-4 text-sm text-gray-600">Fetching data...</p>}
