@@ -9,7 +9,7 @@ import Sidebar from '../cards/sidebar';
 const Dashboard = () => {
   return (
     <>
-        <div className='lg:flex lg:flex-row '>
+      <div className='lg:flex lg:flex-row'>
         <div className='lg:w-[2%]'>
             <LeftSidebar />
         </div>
@@ -22,7 +22,7 @@ const Dashboard = () => {
             <div><DietMenu /></div>
         </div>
   
-          <div className='lg:w-[20%]'>
+          <div className='lg:w-[20%] mt-5 ml-4.5'>
             <Sidebar />
           </div>
     </div>
