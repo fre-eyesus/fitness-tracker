@@ -46,7 +46,10 @@ const CalorieInput = () => {
               activity: max.name,
               duration: max.duration_minutes,
               calories: max.total_calories
-            }
+            };
+            setActivity('');
+            setWeight('');
+            setDuration('');
             
               
           console.log(' Processed chartData:', processed);
@@ -81,6 +84,7 @@ const CalorieInput = () => {
             return;
           }
         fetchCalories();
+
         };
 
   return (
