@@ -11,12 +11,22 @@ const CalorieInput = () => {
   const [loading, setLoading] = useState(false);
   const [chartData, setChartData] = useState([]);
 
-  const clearChart = () => {
-    setChartData([]);
-  };
   
-
-
+  useEffect(() => {
+      const stored = localStorage.getItem('calorieChartData');
+      if (stored) {
+          setChartData(JSON.parse(stored));
+        }
+    }, []);
+    
+    useEffect(() => {
+        localStorage.setItem('calorieChartData', JSON.stringify(chartData));
+    }, [chartData]);
+    
+    const clearChart = () => {
+      setChartData([]);
+      localStorage.removeItem('calorieChartData');
+    };
   const fetchCalories = async () => {
     try {
       setLoading(true);
