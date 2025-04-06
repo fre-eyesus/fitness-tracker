@@ -125,14 +125,14 @@ const CalorieInput = () => {
                     />
                     <button
                       type="submit"
-                      className="bg-[#8676FE] text-white py-2 rounded-md hover:bg-[#6c60e6]"
+                      className="bg-[#8676FE] text-white py-2 rounded-md hover:bg-[#6c60e6] cursor-pointer"
                     >
                       Calculate
                     </button>
                     <button
                       type="button"
                       onClick={clearChart}
-                      className="bg-red-500 text-white py-2 rounded-md hover:bg-red-400"
+                      className="bg-red-500 text-white py-2 rounded-md hover:bg-red-400 cursor-pointer"
                     >
                       Clear Data
                     </button>
