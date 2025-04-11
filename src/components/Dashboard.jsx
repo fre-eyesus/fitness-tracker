@@ -4,7 +4,7 @@ import Workout from '../layout/Workout';
 import CalorieChart from './CalorieChart';
 import Trainer from './TrainerProfile';
 import DietMenu from './DietMenu';
-import Footer from './Footer';
+import Footer from '../layout/Footer';
 import Sidebar from '../layout/Sidebar';
 import CalorieInput from './CalorieInput';
 import Modal from './Modal';

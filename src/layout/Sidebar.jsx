@@ -2,7 +2,7 @@ import React from 'react';
 import acc from '../assets/acc.svg';
 const Sidebar = () => {
   return (
-    <aside className="ml-9.5 w-full max-w-[300px] bg-[#EEEEEE] p-4 flex flex-col space-y-6 text-gray-800 rounded-lg md:max-lg:mx-auto md:max-lg:mt-10 md:max-lg:w-full">
+    <aside className="ml-9.5 w-full max-w-[300px] bg-[#EEEEEE] p-4 flex flex-col space-y-6 text-gray-800 rounded-lg md:max-lg:mx-auto md:max-lg:mt-10">
       
       <div className="flex justify-end">
             <img src={acc} alt="a placeholder for account" className='w-5 h-5'/>
