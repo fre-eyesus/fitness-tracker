@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import LeftSidebar from '../layout/LeftSidebar';
 import Workout from '../layout/Workout';
 import CalorieChart from './CalorieChart';
