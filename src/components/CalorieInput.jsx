@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chart } from 'chart.js/auto';
 import CalorieChart from './CalorieChart';
-import Workout from '../cards/Workout';
+import Workout from '../layout/Workout';
 
 const CalorieInput = () => {
   const [activity, setActivity] = useState('');

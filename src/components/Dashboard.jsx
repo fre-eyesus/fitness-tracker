@@ -1,11 +1,13 @@
 import React from 'react';
-import LeftSidebar from '../cards/LeftSidebar';
-import Workout from '../cards/Workout';
+import LeftSidebar from '../layout/LeftSidebar';
+import Workout from '../layout/Workout';
 import CalorieChart from './CalorieChart';
 import Trainer from './TrainerProfile';
 import DietMenu from './DIetMenu';
 import Footer from './Footer';
-import Sidebar from '../cards/sidebar';
+import Sidebar from '../layout/sidebar';
+
+
 const Dashboard = () => {
   return (
     <>
