@@ -35,7 +35,9 @@ const CalorieChart = ({ chartData = [] }) => {
                 '#36A2EB33',
                 '#9966FF33',
                 '#C9CBCF33'],
-                barThickness: 30,
+            barThickness: window.innerWidth < 640 ? 20 : 30,
+            categoryPercentage: 0.8,
+            barPercentage: 0.6,
 
 
           }
@@ -43,6 +45,7 @@ const CalorieChart = ({ chartData = [] }) => {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             display: false,
@@ -79,7 +82,7 @@ const CalorieChart = ({ chartData = [] }) => {
   }, [chartData]);
 
   return (
-    <div className="w-[300px] lg:w-full md:max-lg:ml-28 md:w-[66%] min-h-[250px] mx-14 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
+    <div className="w-[300px] lg:w-full md:max-lg:ml-28 md:w-[66%] min-h-[250px] mx-14 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm sm:h-[250px] md:h-[300px]">
     
         <canvas ref={chartRef} className='w-full h-[250px]' ></canvas>
 
