@@ -5,13 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from '../components/Modal';
 import {useState} from 'react';
 import CalorieInput from '../components/CalorieInput';
-const LeftSidebar = () => {
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true); 
-    const closeModal = () => setIsModalOpen(false); 
-
+const LeftSidebar = ({ openModal }) => {
 
   return (
     <div className="fixed top-0 left-0 h-full max-sm:w-[5%] sm:w-[5%] lg:w-[10%] xl:w-[5%] bg-[#EEEEEE] shadow-lg flex flex-col items-center p-4 space-y-10 max-lg:w-20">
@@ -30,10 +24,6 @@ const LeftSidebar = () => {
           <span className="mt-1 hidden lg:block text-center">Calorie</span>
         </a>
       </nav>
-
-      <Modal isOpen={isModalOpen} closeModal={closeModal}>
-        <CalorieInput />
-      </Modal>
     </div>
   );
 };
