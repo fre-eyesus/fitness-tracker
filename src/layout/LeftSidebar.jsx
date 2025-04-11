@@ -21,7 +21,7 @@ const LeftSidebar = ({ openModal }) => {
 
         <a href="#" className="flex flex-col items-center hover:text-indigo-500 transition" onClick={openModal}>
           <Plus size={20} />
-          <span className="mt-1 hidden lg:block text-center">Calorie</span>
+          <span className="mt-1 hidden lg:block text-center">Calculate</span>
         </a>
       </nav>
     </div>
