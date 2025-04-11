@@ -5,7 +5,7 @@ import CalorieChart from './CalorieChart';
 import Trainer from './TrainerProfile';
 import DietMenu from './DietMenu';
 import Footer from './Footer';
-import Sidebar from '../layout/sidebar';
+import Sidebar from '../layout/Sidebar';
 
 
 const Dashboard = () => {
