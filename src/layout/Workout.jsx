@@ -18,8 +18,8 @@ const Workout = ({ data }) => {
 
   return (
     <>
-      <h2 className="text-xl font-medium mx-9 my-5  md:ml-36">Welcome!, <span className='font-light text-base text-gray-400'>User</span></h2>
-      <div className="w-[300px] md:w-[61.2%] lg:w-[80%] h-[191px] mx-9 md:mx-36 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
+      <h2 className="text-xl font-medium mx-14 my-5  md:ml-36">Welcome!, <span className='font-light text-base text-gray-400'>User</span></h2>
+      <div className="w-[300px] md:w-[61.2%] lg:w-[80%] h-[191px] mx-14 md:mx-36 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
         <p className="mb-2 font-bold tracking-tight text-gray-900">Your workout</p>
         <p className="font-normal text-gray-700">Results for today's workout</p>
   

@@ -4,8 +4,8 @@ import blueberry from '../assets/blueberry.svg'
 function DietMenu() {
   return (
     <>
-    <p className='text-sm mx-9 my-4 font-medium md:text-center'>Featured Diet Menu</p>
-    <div className="mx-9 block w-[300px] h-[225px] p-3 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm md:mx-auto md:w-[50%] md:mb-2 md:p-2 lg:w-[75%]">
+    <p className='text-sm mx-14 my-4 font-medium md:text-center'>Featured Diet Menu</p>
+    <div className="mx-14 block w-[300px] h-[225px] p-3 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm md:mx-auto md:w-[50%] md:mb-2 md:p-2 lg:w-[75%]">
         <div className='flex justify-between bg-gray-900 rounded-lg p-3'>
             <p className='text-white font-medium'>Breakfast</p>
             <span className='text-white font-medium'>10:00 am</span>

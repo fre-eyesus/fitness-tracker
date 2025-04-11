@@ -7,8 +7,8 @@ function Trainer() {
   return (
     <>
 
-    <p className='text-sm my-6 mx-9 font-medium md:m-4 md:text-center'>Recomended Trainer for you</p> 
-   <div className='flex flex-row justify-center items-center mx-9'>
+    <p className='text-sm my-6 mx-14 font-medium md:m-4 md:text-center'>Recomended Trainer for you</p> 
+   <div className='flex flex-row justify-center items-center mx-14'>
       <div className="max-w-xs mx-4 bg-[#EEEE] w-[150px] h-[180x] rounded-2xl shadow-lg overflow-hidden md:w-[46%] md:h-[18%]">
           <img 
             src={fitness} 

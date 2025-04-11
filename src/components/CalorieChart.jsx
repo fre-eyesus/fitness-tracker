@@ -79,7 +79,7 @@ const CalorieChart = ({ chartData = [] }) => {
   }, [chartData]);
 
   return (
-    <div className="w-[300px] lg:w-full md:mas-lg:ml-28 md:w-[66%] min-h-[250px] mx-9 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
+    <div className="w-[300px] lg:w-full md:mas-lg:ml-28 md:w-[66%] min-h-[250px] mx-14 md:mx-16 p-6 bg-[#EEEEEE] border border-gray-200 rounded-lg shadow-sm">
     
         <canvas ref={chartRef} className='w-full h-[250px]' ></canvas>
 
