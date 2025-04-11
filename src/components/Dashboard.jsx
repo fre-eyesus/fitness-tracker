@@ -30,7 +30,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className='lg:flex lg:flex-row'>
+      <div className='lg:flex lg:flex-row overflow-x-hidden'>
         <div className='lg:w-[2%]'>
             <LeftSidebar openModal={openModal} />
         </div>
@@ -43,7 +43,7 @@ const Dashboard = () => {
             <div><DietMenu /></div>
         </div>
   
-          <div className='lg:w-[20%] mt-5 ml-4.5'>
+          <div className='lg:w-[30%] mt-15 ml-4.5 mr-3'>
             <Sidebar />
           </div>
     </div>
