@@ -7,10 +7,7 @@ const CalorieChart = ({ chartData = [] }) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
-  const testData = [
-    { activity: 'Running', duration: 30, calories: 350 },
-    { activity: 'Walking', duration: 60, calories: 180 },
-  ];
+
   
 
   useEffect(() => {
@@ -56,7 +53,9 @@ const CalorieChart = ({ chartData = [] }) => {
             title: {
               display: true,
               text: 'Activity - Duration (min)'
-            }
+            },
+            barPercentage: 0.7,
+            categoryPercentage: 0.6
           },
           y: {
               title: {
